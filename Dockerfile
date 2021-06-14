@@ -11,7 +11,8 @@ RUN set -xe \
     && wget "https://github.com/RipMeApp/ripme/releases/download/$RIPME_VER/ripme.jar" -P /app
 
 VOLUME /data
+VOLUME /root/.config
 WORKDIR /data
 
-ENTRYPOINT ["java", "-jar", "/app/ripme.jar"]
-CMD ["--help"]
+ENTRYPOINT ["tail"]
+CMD ["-f","/dev/null"]
